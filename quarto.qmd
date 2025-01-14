@@ -1,0 +1,67 @@
+---
+title: "Mein erstes Quarto-Dokument"
+author: "Gabriele Schwiertz"
+format: html
+lang: de
+date: today
+institute: Universitäts- und Stadtbibliothek Köln
+bibliography: references.bib
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+### Drei Rauten
+
+und ein bisschen Text[^1].
+
+[^1]: Meine erste Fussnote....
+
+Aufzählung:
+
+-   erstens
+
+-   zweitens
+
+-   drittens
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: set-up
+
+library(palmerpenguins)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+head(penguins)
+```
+
+## Inline-Code
+
+Im Text Code zu verwenden. Der Datensatz enthält:
+
+-   `r nrow(penguins)` Pinguinen
+
+-   `r n_distinct(penguins$species)` Pinguinarten
+
+## Übung
+
+**Füge im Text** die durchschnittliche Schnabellänge aller Pinguine im Datensatz ein:
+
+Die durchschnittliche Schnabellänge beträgt XXX mm.
+
+1.  Schau Dir den Datensatz an, finde heraus, wie die relevante Spalte heißt.
+2.  Lass den Durchschnitt ausrechnen: Das funktioniert nicht direkt, wir müssen noch eine Option anpassen.
+3.  Lies Dir den Hilfetext zur Funktion `round()` durch und runde die Zahl auf 2 Nachkommastellen.
